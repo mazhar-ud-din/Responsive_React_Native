@@ -13,6 +13,9 @@ const ConstantImages = {
     UserIcon: require('../../Assets/Images/user.png'),
     BookIcon: require('../../Assets/Images/calendar.png'),
     BabyIcon: require('../../Assets/Images/babyes.jpg'),
+    SlipperIcon: require('../../Assets/Images/slipper.png'),
+    LaptopIcon: require('../../Assets/Images/laptop.png'),
+
 }
 
 export default ConstantImages

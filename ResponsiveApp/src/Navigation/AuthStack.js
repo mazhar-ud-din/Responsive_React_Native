@@ -5,6 +5,7 @@ import {
     ChooseAccount,
     ForgetScreen,
     LoginScreen,
+    MyCard,
     RegisterScreen,
     SetPasswardScreen
 } from '../Screens';
@@ -15,21 +16,22 @@ const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
     return (
-<>
-<StatusBar translucent backgroundColor="transparent"  barStyle = 'light-content' />
+        <>
+            <StatusBar translucent backgroundColor="transparent" barStyle='light-content' />
 
 
-        <Stack.Navigator
-            screenOptions={{ headerShown: false }}
-        >
-            <Stack.Screen name={NavigationString.LOGIN} component={LoginScreen} />
-            <Stack.Screen name={NavigationString.FORGETPASSWARD} component={ForgetScreen} />
-            <Stack.Screen name={NavigationString.SETPASSWARD} component={SetPasswardScreen} />
-            <Stack.Screen name={NavigationString.COOSEACCOUNT} component={ChooseAccount} />
-            <Stack.Screen name={NavigationString.REGISTER} component={RegisterScreen} />
-            <Stack.Screen name={NavigationString.BOTTOMTAB} component={BottomTab} />
-        
-        </Stack.Navigator>
+            <Stack.Navigator
+                screenOptions={{ headerShown: false }}
+            >
+                <Stack.Screen name={NavigationString.LOGIN} component={LoginScreen} />
+                <Stack.Screen name={NavigationString.FORGETPASSWARD} component={ForgetScreen} />
+                <Stack.Screen name={NavigationString.SETPASSWARD} component={SetPasswardScreen} />
+                <Stack.Screen name={NavigationString.COOSEACCOUNT} component={ChooseAccount} />
+                <Stack.Screen name={NavigationString.REGISTER} component={RegisterScreen} />
+                <Stack.Screen name={NavigationString.BOTTOMTAB} component={BottomTab} />
+                <Stack.Screen name={NavigationString.MYCARD} component={MyCard} />
+
+            </Stack.Navigator>
         </>
 
     )

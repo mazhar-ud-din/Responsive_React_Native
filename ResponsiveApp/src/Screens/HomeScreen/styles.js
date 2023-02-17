@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     },
     MainFlatStyle: {
         marginTop: moderateScale(40),
+        
 
     },
     TextStyle: {

@@ -4,6 +4,8 @@ export {default as RegisterScreen} from './RegisterScreen/RegisterScreen'
 export {default as ForgetScreen} from './ForgetScreen/ForgetScreen'
 export {default as SetPasswardScreen} from './SetPasswordScreen/SetPasswardScreen'
 export {default as ChooseAccount} from './ChooseAccount/ChooseAccount'
+export {default as MyCard} from './MyCard/MyCard'
+
 
 
 

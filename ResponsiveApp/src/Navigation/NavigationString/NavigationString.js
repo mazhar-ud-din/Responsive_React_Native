@@ -7,7 +7,8 @@ export const NavigationString = {
     COOSEACCOUNT: 'CHOOSEACCOUNT',
     BOOKING:'BOOKING',
     PROFILE:'PROFILE',
-    BOTTOMTAB:'BOTTOMTAB'
+    BOTTOMTAB:'BOTTOMTAB',
+    MYCARD:'MYCARD'
 
 
 }

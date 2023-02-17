@@ -1,14 +1,13 @@
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React,{useState} from 'react'
-import styles from './styles'
-import HeaderCom from '../../Component/HeaderCom'
-import { moderateScale, moderateVerticalScale } from 'react-native-size-matters'
+import React, { useState } from 'react'
+import { Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { moderateScale } from 'react-native-size-matters'
 import ButtonCom from '../../Component/ButtonCom'
+import HeaderCom from '../../Component/HeaderCom'
 import InputArea from '../../Component/InputArea'
 import ConstantImages from '../../Constants/Image/Image'
-import Colors from '../../ColorsStyle/Colors'
 import { NavigationString } from '../../Navigation/NavigationString/NavigationString'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import styles from './styles'
 
 const RegisterScreen = ({navigation}) => {
 
@@ -24,7 +23,7 @@ const RegisterScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <HeaderCom style={{ padding: moderateScale(12) }} onPress={goToBack} />
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView >
         <View style={styles.Container}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <InputArea

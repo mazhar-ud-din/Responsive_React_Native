@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 
     },
     TextStyle:{
-        fontSize:scale(40),
+        fontSize:scale(44),
         color:'white',
         fontWeight:'bold'
     },
