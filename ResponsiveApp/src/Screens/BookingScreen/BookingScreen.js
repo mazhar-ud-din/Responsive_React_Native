@@ -1,40 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import { Text, View, TouchableOpacity, Image, FlatList } from 'react-native'
-import styles from './styles'
-import { AxiosDeleteRequest } from '../../Component/AxiosApi'
-import ButtonCom from '../../Component/ButtonCom'
+import React, { useEffect } from 'react'
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters'
-import Colors from '../../ColorsStyle/Colors'
-import ConstantImages from '../../Constants/Image/Image'
 import { useDispatch, useSelector } from 'react-redux'
+import Colors from '../../ColorsStyle/Colors'
+import ButtonCom from '../../Component/ButtonCom'
+import ConstantImages from '../../Constants/Image/Image'
+import { NavigationString } from '../../Navigation/NavigationString/NavigationString'
+import ForgroundHandler from '../../Notification/ForgroundHandler'
+import { requestUserpermission,notificationlistern } from '../../Notification/notificationServices'
 import { sendData } from '../../Redux/action/SendData'
 import { AddMyCard } from '../../Redux/Reducer/Reducer'
-import { NavigationString } from '../../Navigation/NavigationString/NavigationString'
+import styles from './styles'
 
 
 const BookingScreen = ({ navigation }) => {
-  const dispatch=useDispatch()
+
+  const dispatch = useDispatch() 
+  
   useEffect(() => {
     sendData(dispatch)
+    requestUserpermission();
+    notificationlistern();
   }, [])
 
   const { CheckData } = useSelector((state) => { return state?.persistedReducer })
 
 
-    const {CartItems}=useSelector((state)=>{return state?.persistedReducer})
+  const { CartItems } = useSelector((state) => { return state?.persistedReducer })
 
   const renderItem = ({ item }) => {
 
     const ItemData = () => {
-      dispatch(AddMyCard([...CartItems,item]))
+      dispatch(AddMyCard([...CartItems, item]))
     }
-    // const getTotal=()=>{
-    //   const total=0;
-    //   CheckData.map((item)=>{
-    //     total=total+item.qty*item.price
-    //   })
-    //   return total;
-    // }
+  
 
     return (
       <View style={styles.FlatListStyle}>
@@ -45,6 +44,7 @@ const BookingScreen = ({ navigation }) => {
             <Text style={{ fontSize: scale(15), fontWeight: 'bold', color: '#000' }}>{item?.Brand}</Text>
             <Text>{item?.price}</Text>
           </View>
+
 
         </View>
 
@@ -63,7 +63,6 @@ const BookingScreen = ({ navigation }) => {
           </View>
 
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingHorizontal: 10 }}>
-
             {!!item === 0 ? <ButtonCom
               btnStyle={{ width: 40, height: 40 }}
               Value={'+'}
@@ -73,19 +72,15 @@ const BookingScreen = ({ navigation }) => {
               Value={'-'}
               btnStyle={{ width: 40, height: 40 }}
             /> : null}
-
           </View>
-
         </View>
-
       </View>
-
     )
   }
   return (
     <View style={styles.Container}>
       <View style={styles.HeaderStyle}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={()=>navigation.goBack()}>
           <Image source={ConstantImages.ArrowIcon} style={styles.imgStyle} />
         </TouchableOpacity>
         <Text style={styles.TextStyle}>Product Details</Text>
