@@ -9,6 +9,7 @@ const ForgroundHandler = () => {
         const unsubscribe = messaging().onMessage((remoteMessage) => {
             console.log("handle in foreground", remoteMessage)
             const {notification,messageId} = remoteMessage
+
             if(Platform.OS == 'ios'){
             PushNotificationIOS.addNotificationRequest({
                 id: messageId,
